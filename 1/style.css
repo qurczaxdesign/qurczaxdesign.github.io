@@ -53,19 +53,13 @@ div[class^="col"] {
     float: left;
 }
 
-.section {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-
 @media only screen and (min-width: 768px) {
     div[class^="col"] {
         width: 50%;
     }
 
     .section {
-        width: 70%;
+        width: 100%;
     }
 }
 
@@ -75,6 +69,12 @@ div[class$="_1"] {
 
 div[class$="_2"] {
     margin-left: 8px;
+}
+
+.section {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 .section .head {
@@ -118,6 +118,7 @@ textarea::placeholder {
 .input1, .input2, .input3 {
     margin: 20px 0;
     color: inherit;
+    overflow: hidden;
 }
 
 .input1 {
@@ -324,4 +325,16 @@ textarea {
 
 .input3:last-child {
     text-align: right;
+}
+
+.input2 input[type="checkbox"] {
+    display: inline-block;
+    float: left;
+    width: 15%;
+}
+
+.input2 label {
+    display: inline-block;
+    float: left;
+    width: 85%;
 }
