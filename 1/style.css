@@ -53,12 +53,19 @@ div[class^="col"] {
     float: left;
 }
 
+.section {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
 @media only screen and (min-width: 768px) {
     div[class^="col"] {
         width: 50%;
     }
-	.section {
-    	width: 100%;
+
+    .section {
+        width: 70%;
     }
 }
 
@@ -68,12 +75,6 @@ div[class$="_1"] {
 
 div[class$="_2"] {
     margin-left: 8px;
-}
-
-.section {
-    width: 70%;
-    margin: 0 auto;
-    margin-bottom: 20px;
 }
 
 .section .head {
@@ -97,21 +98,21 @@ div[class$="_2"] {
     border-radius: 3px;
     display: block;
     padding: 20px;
-	overflow: hidden;
+    overflow: hidden;
 }
 
 input, textarea, select {
-	font-family:inherit;
-	color: #909090;
-	font-size: 16px;
+    font-family: inherit;
+    color: #909090;
+    font-size: 16px;
 }
 
 input::placeholder {
-	color: #c5c5c5;
+    color: #c5c5c5;
 }
 
 textarea::placeholder {
-	color: #c5c5c5;
+    color: #c5c5c5;
 }
 
 .input1, .input2, .input3 {
@@ -146,7 +147,7 @@ textarea::placeholder {
 }
 
 .input1 label img {
-	opacity: .1;
+    opacity: .1;
 }
 
 .input1 input, select {
@@ -160,7 +161,7 @@ textarea::placeholder {
 }
 
 .input1 select:first-child {
-	color: #c5c5c5;
+    color: #c5c5c5;
 }
 
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
@@ -170,7 +171,7 @@ textarea::placeholder {
     height: 2em;
     margin: 0;
     opacity: 0;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 [type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
@@ -230,34 +231,35 @@ textarea::placeholder {
 [type="checkbox"]:disabled:checked + label:after {
     color: #999;
 }
+
 [type="checkbox"]:disabled + label {
     color: #aaa;
 }
 
 input.button {
-	border-radius: 5px;
-	width: 100%;
-	cursor: pointer;
-	color: #ffffff;
-	text-shadow: 0px 1px 2px #000000;
-	transition: all ease 0.2s;
-	font-weight: bold;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    color: #ffffff;
+    text-shadow: 0px 1px 2px #000000;
+    transition: all ease 0.2s;
+    font-weight: bold;
 }
 
 input.big {
-	font-size: 24px;
-	padding: 10px 6px;
-	width: 100%;
+    font-size: 24px;
+    padding: 10px 6px;
+    width: 100%;
 }
 
 input.small {
-	font-size: 18px;
-	padding: 7px 3px;
-	width: 90%;
+    font-size: 18px;
+    padding: 7px 3px;
+    width: 90%;
 }
 
 input[type="submit"]:disabled {
-	opacity: 0.5;
+    opacity: 0.5;
 }
 
 input.green {
@@ -266,8 +268,7 @@ input.green {
     background: -webkit-linear-gradient(top, #a3d840 0%,#7ec31f 100%);
     background: linear-gradient(to bottom, #a3d840 0%,#7ec31f 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3d840', endColorstr='#7ec31f',GradientType=0 );
-	border: 1px solid #3b9a00;
-    
+    border: 1px solid #3b9a00;
 }
 
 input.green:hover {
@@ -284,8 +285,7 @@ input.red {
     background: -webkit-linear-gradient(top, #f76d7d 0%,#f03747 100%);
     background: linear-gradient(to bottom, #f76d7d 0%,#f03747 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f76d7d', endColorstr='#f03747',GradientType=0 );
-	border: 1px solid #a7222c;
-    
+    border: 1px solid #a7222c;
 }
 
 input.red:hover {
@@ -297,31 +297,31 @@ input.red:hover {
 }
 
 textarea {
-	font-family: "TitilliumText22L", sans-serif;
-	resize: none;
-	border-radius: 5px;
+    font-family: "TitilliumText22L", sans-serif;
+    resize: none;
+    border-radius: 5px;
     background: #f6f6f6;
     background: -moz-linear-gradient(top, #f6f6f6 0%, #f0f0f0 98%);
     background: -webkit-linear-gradient(top, #f6f6f6 0%,#f0f0f0 98%);
     background: linear-gradient(to bottom, #f6f6f6 0%,#f0f0f0 98%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#f0f0f0',GradientType=0 );
-    border: solid 1px #c6c6c6;	
-	width: 100%;
-	padding: 8px;
+    border: solid 1px #c6c6c6;
+    width: 100%;
+    padding: 8px;
 }
 
 .input3 {
-	display: inline-block;
-	width: 50%;
-	float: left;
-	line-height: 42px;
-	margin: 0;
+    display: inline-block;
+    width: 50%;
+    float: left;
+    line-height: 42px;
+    margin: 0;
 }
 
 .input3::first-child {
-	text-align: left;
+    text-align: left;
 }
 
 .input3:last-child {
-	text-align: right;
+    text-align: right;
 }
