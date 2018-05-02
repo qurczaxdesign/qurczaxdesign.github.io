@@ -231,7 +231,7 @@ input.big {
 input.small {
     font-size: 18px;
     padding: 7px 3px;
-    width: 90%;
+    width: 100%;
 }
 input[type="submit"]:disabled {
     opacity: 0.5;
@@ -287,8 +287,7 @@ textarea {
     display: inline-block;
     width: 100%;
     float: left;
-    line-height: 0;
-    margin: 0;
+    margin: 10px 0;
 }
 .input3::first-child {
     text-align: left;
@@ -314,13 +313,17 @@ textarea {
     div[class^="col"] {
         width: 50%;
     }
-	
-    section {
+
+    .section {
         width: 70%;
     }
-	
+
     .input3 {
         width: 50%;
         line-height: 42px;
+    }
+
+    input.small {
+        width: 90%;
     }
 }
