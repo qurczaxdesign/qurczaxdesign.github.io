@@ -10,20 +10,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 </head>
 <body>
-	<header id="header">
-		<div class="container">
+	<header class="header">
+		<div class="contentainer">
 			<div class="logo"><img src="./img/logo.png"/></div>
 		</div>	
 	</header>
-	<div id="content">
-		<div class="container">
+	<main>
+		<div class="contentainer">
 			<div class="col-1">
-				<div class="section">
-					<div class="head">
-						Register Form
-					</div>
+				<section>
+					<h1>Register Form</h1>
 					<div class="item">
-						<div class="cont">
+						<div class="content">
 							<form action="#dir1">
 								<div class="input1">
 									<label for="username"><img src="./img/icons/username1.svg" alt="username icon" /></label><!--inkscape dimmersion w: 563px h: 1006px-->
@@ -39,7 +37,7 @@
 								</div>
 								<div class="input1">
 									<label for="email"><img src="./img/icons/envelope1.svg" alt="email icon" /></label>
-									<input type="text" name="email" placeholder="Email" required>
+									<input type="email" name="email" placeholder="Email" required>
 								</div>
 								<div class="input1">
 									<label for="location"><img src="./img/icons/location1.svg" alt="location icon" /></label>
@@ -56,18 +54,16 @@
 									<label for="terms-accept">I have read and accept the terms of use.</label>
 								</div>
 								<div class="input2">
-									<input type="submit" name="sign-in" value="Sign Up" class="button green big">
+									<input type="submit" name="sign-up" value="Sign Up" class="button green big">
 								</div>
 							</form>
 						</div>
 					</div>
-				</div>
-				<div class="section">
-					<div class="head">
-						Send Email
-					</div>
+				</section>
+				<section>
+					<h1>Send Email</h1>
 					<div class="item">
-						<div class="cont">
+						<div class="content">
 							<form action="#dir2">
 								<div class="input1">
 									<label for="username"><img src="./img/icons/username1.svg" alt="username icon" /></label><!--inkscape dimmersion w: 563px h: 1006px-->
@@ -75,26 +71,24 @@
 								</div>
 								<div class="input1">
 									<label for="email"><img src="./img/icons/envelope1.svg" alt="email icon" /></label>
-									<input type="text" name="email" placeholder="Email" required>
+									<input type="email" name="email" placeholder="Email" required>
 								</div>
 								<div class="input2">		
 									<textarea placeholder="Type your message..." rows="8" required></textarea>
 								</div>
 								<div class="input2">	
-									<input type="submit" name="sign-in" value="Send Email" class="button green big">
+									<input type="submit" name="send-email" value="Send Email" class="button green big">
 								</div>	
 							</form>
 						</div>
 					</div>
-				</div>
+				</section>
 			</div>
 			<div class="col-2">
-				<div class="section">
-					<div class="head">
-						Sign In Form
-					</div>
+				<section>
+					<h1>Sign In Form</h1>
 					<div class="item">
-						<div class="cont">
+						<div class="content">
 							<form action="#dir3">
 								<div class="input1">
 									<label for="username"><img src="./img/icons/username1.svg" alt="username icon" /></label><!--inkscape dimmersion w: 563px h: 1006px-->
@@ -114,58 +108,54 @@
 							</form>
 						</div>
 					</div>
-				</div>
-				<div class="section">
-					<div class="head">
-						Recover Form
-					</div>
+				</section>
+				<section>
+					<h1>Recover Form</h1>
 					<div class="item">
-						<div class="cont">
+						<div class="content">
 							<form action="#dir4">
 								<div class="input1">
 									<label for="email"><img src="./img/icons/envelope1.svg" alt="email icon" /></label>
-									<input type="text" name="email" placeholder="Enter your Email" required>
+									<input type="email" name="email" placeholder="Enter your Email" required>
 								</div>
 								<div class="input1">
 									<label for="phone"><img src="./img/icons/phone1.svg" alt="phone icon" /></label>
 									<input type="text" name="phone" placeholder="Enter your Phone number" required>
 								</div>
 								<div class="input3">
-									<input type="submit" name="sign-in" value="Send" class="button green small">
+									<input type="submit" name="send" value="Send" class="button green small">
 								</div>
 								<div class="input3">
-									<input type="submit" name="sign-in" value="Done" class="button green small" disabled>
+									<input type="submit" name="done" value="Done" class="button green small" disabled>
 								</div>
 							</form>
 						</div>
 					</div>
-				</div>
-				<div class="section">
-					<div class="head">
-						Subscribe Form
-					</div>
+				</section>
+				<section>
+					<h1>Subscribe Form</h1>
 					<div class="item">
-						<div class="cont">
+						<div class="content">
 							<form action="#dir5">
 								<div class="input1">
 									<label for="email"><img src="./img/icons/envelope1.svg" alt="email icon" /></label>
 									<input type="text" name="email" placeholder="Enter your Email" required>
 								</div>
 								<div class="input3">
-									<input type="submit" name="sign-in" value="Subscribe" class="button green small">
+									<input type="submit" name="subscribe" value="Subscribe" class="button green small">
 								</div>
 								<div class="input3">
-									<input type="submit" name="sign-in" value="No, Thanks" class="button red small">
+									<input type="submit" name="no-thanks" value="No, Thanks" class="button red small">
 								</div>
 							</form>
 						</div>
 					</div>
-				</div>
-				<footer id="footer">
+				</section>
+				<footer class="footer">
 					<div class="logo"><img src="./img/logo.png"/><img src="./img/logo2.png"/></div>
 				</footer>
 			</div>
 		</div>
-	</div>
+	</main>
 </body>
 </html>
