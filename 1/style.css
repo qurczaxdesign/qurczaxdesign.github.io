@@ -1,12 +1,16 @@
+/* Weekly WebDev Challenge #1 - Kamil Pyszkowski, 2018 */
+/*misc*/
+* {
+    box-sizing: border-box;
+}
+
+/*font*/
 @font-face {
     font-family: "TitilliumText22L";
     src: url("./font/TitilliumText22L002.otf"), url("./font/TitilliumText22L004.otf");
 }
 
-* {
-    box-sizing: border-box;
-}
-
+/*body*/
 body {
     margin: 0;
     padding: 0;
@@ -17,34 +21,32 @@ body {
     color: #909090;
 }
 
+/*container*/
 .container {
-    display: block;
     width: 90%;
     margin: 0 auto;
 }
 
-#header, #footer {
+/*header and footer*/
+.header, .footer {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-#header, #footer {
+.header, .footer {
     height: 180px;
 }
-
 .logo {
     text-align: center;
 }
-
-#header .logo img {
+.header .logo img {
     max-width: 100%;
 }
-
-#footer .logo img {
+.footer .logo img {
     max-width: 75%;
 }
 
+/*columns*/
 div[class^="col"] {
     display: inline-block;
     padding: 0;
@@ -52,65 +54,60 @@ div[class^="col"] {
     width: 100%;
     float: left;
 }
-
-.section {
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
-
 div[class$="_1"] {
     margin-right: 8px;
 }
-
 div[class$="_2"] {
     margin-left: 8px;
 }
 
-.section .head {
+/*sections*/
+section {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+section h1 {
     text-align: center;
     font-size: 32px;
     color: #ffffff;
     text-shadow: 0px 1px 2px #000000;
+	margin: 0;
     margin-bottom: 8px;
-    font-weight: bold;
 }
-
-.section .item {
+section .item {
     background: rgba(0,0,0,0.4);
     border-radius: 3px;
-    display: block;
     padding: 20px;
 }
-
-.section .item .cont {
+section .item .content {
     background: #f4f4f4;
     border-radius: 3px;
-    display: block;
     padding: 20px;
     overflow: hidden;
 }
 
+/*form elements base*/
 input, textarea, select {
     font-family: inherit;
     color: #909090;
     font-size: 16px;
 }
-
 input::placeholder {
     color: #c5c5c5;
 }
-
 textarea::placeholder {
     color: #c5c5c5;
 }
 
-.input1, .input2 {
+/*input base*/
+.input1, .input2, .input3 {
     margin: 20px 0;
     color: inherit;
     overflow: hidden;
 }
 
+/*input 1*/
 .input1 {
     display: flex;
     align-items: center;
@@ -125,7 +122,6 @@ textarea::placeholder {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#f0f0f0',GradientType=0 );
     border: solid 1px #c6c6c6;
 }
-
 .input1 label {
     display: flex;
     justify-content: center;
@@ -136,11 +132,9 @@ textarea::placeholder {
     border-right: solid 1px #c6c6c6;
     height: 28px;
 }
-
 .input1 label img {
     opacity: .1;
 }
-
 .input1 input, select {
     display: inline-block;
     width: 85%;
@@ -150,11 +144,11 @@ textarea::placeholder {
     border: none;
     height: inherit;
 }
-
 .input1 select:first-child {
     color: #c5c5c5;
 }
 
+/*checkbox*/
 [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
     position: absolute;
     z-index: 9999;
@@ -164,12 +158,10 @@ textarea::placeholder {
     opacity: 0;
     cursor: pointer;
 }
-
 [type="checkbox"]:not(:checked) + label, [type="checkbox"]:checked + label {
     position: relative;
     padding-left: 1.95em;
 }
-
 [type="checkbox"]:not(:checked) + label:before, [type="checkbox"]:checked + label:before {
     content: '';
     position: absolute;
@@ -185,7 +177,6 @@ textarea::placeholder {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#f0f0f0',GradientType=0 );
     border: solid 1px #c6c6c6;
 }
-
 [type="checkbox"]:not(:checked) + label:after, [type="checkbox"]:checked + label:after {
     content: '';
     position: absolute;
@@ -202,31 +193,27 @@ textarea::placeholder {
     transition: all .2s;
     border-radius: 2px;
 }
-
 [type="checkbox"]:not(:checked) + label:after {
     opacity: 0;
     transform: scale(0);
 }
-
 [type="checkbox"]:checked + label:after {
     opacity: 1;
     transform: scale(1);
 }
-
 [type="checkbox"]:disabled:not(:checked) + label:before, [type="checkbox"]:disabled:checked + label:before {
     box-shadow: none;
     border-color: #bbb;
     background-color: #ddd;
 }
-
 [type="checkbox"]:disabled:checked + label:after {
     color: #999;
 }
-
 [type="checkbox"]:disabled + label {
     color: #aaa;
 }
 
+/*buttons*/
 input.button {
     border-radius: 5px;
     width: 100%;
@@ -236,23 +223,19 @@ input.button {
     transition: all ease 0.2s;
     font-weight: bold;
 }
-
 input.big {
     font-size: 24px;
     padding: 10px 6px;
     width: 100%;
 }
-
 input.small {
     font-size: 18px;
     padding: 7px 3px;
-    width: 100%;
+    width: 90%;
 }
-
 input[type="submit"]:disabled {
     opacity: 0.5;
 }
-
 input.green {
     background: #a3d840;
     background: -moz-linear-gradient(top, #a3d840 0%, #7ec31f 100%);
@@ -261,7 +244,6 @@ input.green {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a3d840', endColorstr='#7ec31f',GradientType=0 );
     border: 1px solid #3b9a00;
 }
-
 input.green:hover {
     background: #7ec31f;
     background: -moz-linear-gradient(top, #7ec31f 0%, #a3d840 92%);
@@ -269,7 +251,6 @@ input.green:hover {
     background: linear-gradient(to bottom, #7ec31f 0%,#a3d840 92%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ec31f', endColorstr='#a3d840',GradientType=0 );
 }
-
 input.red {
     background: #f76d7d;
     background: -moz-linear-gradient(top, #f76d7d 0%, #f03747 100%);
@@ -278,7 +259,6 @@ input.red {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f76d7d', endColorstr='#f03747',GradientType=0 );
     border: 1px solid #a7222c;
 }
-
 input.red:hover {
     background: #f03747;
     background: -moz-linear-gradient(top, #f03747 0%, #f76d7d 92%);
@@ -287,6 +267,7 @@ input.red:hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f03747', endColorstr='#f76d7d',GradientType=0 );
 }
 
+/*textarea*/
 textarea {
     font-family: "TitilliumText22L", sans-serif;
     resize: none;
@@ -301,48 +282,45 @@ textarea {
     padding: 8px;
 }
 
+/*input 3*/
 .input3 {
     display: inline-block;
     width: 100%;
     float: left;
-    margin: 10px 0;
+    line-height: 0;
+    margin: 0;
 }
-
 .input3::first-child {
     text-align: left;
 }
-
 .input3:last-child {
     text-align: right;
 }
 
+/*input 2*/
 .input2 input[type="checkbox"] {
     display: inline-block;
     float: left;
     width: 15%;
 }
-
 .input2 label {
     display: inline-block;
     float: left;
     width: 85%;
 }
 
+/*media query for responsibility*/
 @media only screen and (min-width: 768px) {
     div[class^="col"] {
         width: 50%;
     }
-
-    .section {
+	
+    section {
         width: 70%;
     }
-
+	
     .input3 {
         width: 50%;
         line-height: 42px;
-    }
-
-    input.small {
-        width: 90%;
     }
 }
