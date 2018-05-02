@@ -77,7 +77,6 @@ section h1 {
 }
 section .item {
     background: rgba(0,0,0,0.4);
-    border-radius: 3px;
     padding: 20px;
 }
 section .item .content {
@@ -314,10 +313,14 @@ textarea {
         width: 50%;
     }
 
-    .section {
+    section {
         width: 70%;
     }
 
+	section .item {
+    border-radius: 3px;
+}
+	
     .input3 {
         width: 50%;
         line-height: 42px;
