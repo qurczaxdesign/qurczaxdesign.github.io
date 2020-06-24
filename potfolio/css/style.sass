@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap')
+@import 'defs'
+
+$fontStack: Jost, sans-serif
+
+$colorBlue1: #1854c2
+$colorBlue2: #7197dd
+$colorBlue3: #0d306e
+$colorDark: #1d1d1d
+$colorWhite1: #f0f0f0
+$colorWhite2: #e6e6e6
+$colorAccent1: #FFC107
+$colorAccent2: #FF8F00
+$colorAlphaD: rgba(0,0,0,0.5)
+
+$transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) .3s
+
+$headerBackground: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cstyle type='text/css'%3E .st0%7Bopacity:0.25;%7D .st1%7Bopacity:0.4;%7D%0A%3C/style%3E%3Cpolygon class='st0' points='100,0 100,100 0,100 0,30 0,0 '/%3E%3Crect x='100' y='100' class='st0' width='100' height='100'/%3E%3Cpolygon class='st1' points='200,0 100,30 0,0 '/%3E%3Cpolygon class='st1' points='0,100 100,100 0,130 '/%3E%3Cpolygon class='st1' points='200,100 200,130 100,100 '/%3E%3C/svg%3E%0A")
+
+@mixin displayFlex($align, $justify, $direction)
+  display: flex
+  align-items: $align
+  justify-content: $justify
+  flex-direction: $direction
+
+@mixin displayGrid($columns, $rows)
+  display: grid
+  grid-template-columns: $columns
+  grid-template-rows: $rows
+
+@keyframes visible
+	0%
+    transform: scale(0)
+	85%
+    transform: scale(1.05)
+	100%
+    transform: scale(1)
+
+@keyframes headerBackground
+  0%
+    background-position: 0 0
+    opacity: 0
+  50%
+    opacity: .5
+  100%
+    background-position: -163px 0
+    opacity: 0
+
+@keyframes continueButton
+  0%
+  25%
+    transform: translateY(5px)
+    box-shadow: none
+  30%
+    transform: translateY(0)
+    box-shadow: 0 5px $colorAccent2, 0 4px 10px -3px $colorDark
+  50%
+    transform: translateY(5px)
+    box-shadow: none
+  55%
+    transform: translateY(0)
+    box-shadow: 0 5px $colorAccent2, 0 4px 10px -3px $colorDark
+
+body
+  font-family: $fontStack
+  color: $colorDark
+  background: $colorWhite1
+
+button
+  padding: 10px 25px
+  box-shadow: 0 5px $colorAccent2, 0 4px 10px -3px $colorDark
+  background: $colorAccent1
+  border-radius: 10px
+  transition: all .3s
+  position: relative
+  outline-color: $colorAccent2
+
+  &:hover
+    filter: brightness(1.1)
+  &:active, :focus
+    transform: translateY(5px)
+    box-shadow: none
+
+  span
+    font-weight: 700
+    color: $colorDark
+    font-size: 1.3rem
+
+
+nav.topHeader, header.header, section, footer.footer
+  padding: 0 5%
+
+nav.topHeader
+  @include displayGrid(1fr 3fr, minmax(90px, auto))
+  align-items: center
+  position: fixed
+  width: 100%
+  height: 90px
+  z-index: 2
+
+  .logo
+    justify-self: start
+
+
+  button.navigationButton
+    width: 46px
+    height: 46px
+    justify-self: end
+    background: initial
+    padding: initial
+    box-shadow: initial
+
+    span
+      display: block
+      width: inherit
+      height: 4px
+      border-radius: 4px
+      background: $colorWhite1
+      transition: $transition
+
+      &:nth-child(2)
+        margin: 10px 0
+
+    &:focus span
+
+      &:first-child
+        transform: rotate(-45deg) translate(-3px, 3px)
+
+      &:nth-child(2)
+        transform: rotate(45deg) translate(0, 0)
+        margin: 0
+
+      &:last-child
+        transform: rotate(-45deg) translate(3px, -3px)
+
+  ul.navigationMenu
+    display: none
+    grid-column: 1/3
+    align-items: flex-start
+    justify-content: center
+    flex-direction: column
+    background: $colorWhite1
+    width: 100%
+    border-radius: 10px 0 10px 10px
+    margin-top: 20px
+    transform-origin: top right
+
+    &::before
+      content: ''
+      border-bottom: 25px solid $colorWhite1
+      border-left: 22.5px solid transparent
+      border-right: 22.5px solid transparent
+      margin-top: -25px
+      align-self: flex-end
+
+    &.visible
+      display: flex
+      animation-direction: reverse
+      animation: visible .3s
+
+    li.menuItem
+      width: 100%
+
+      &:nth-child(even)
+        background: $colorWhite2
+
+      &.socials
+        @include displayFlex(center, center, row)
+
+      &:last-child
+        border-radius: 0 0 10px 10px
+
+      a
+        @include displayFlex(center, flex-start, row)
+        width: inherit
+
+        svg.icon
+          fill: none
+          stroke-width: 4px
+          stroke: $colorAccent2
+          transform: scale(0.5)
+          width: 90px
+          height: 90px
+
+header.header
+  @include displayFlex(center, space-evenly, column)
+  height: 100vh
+  background-color: $colorBlue1
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+
+  &::before
+    content: ''
+    z-index: -1
+    position: fixed
+    width: 200%
+    height: 200%
+    transform: rotate(30deg)
+    background-image: $headerBackground
+    background-size: 3%
+    animation: headerBackground 10s infinite linear
+    overflow-x: hidden
+
+
+  blockquote
+    color: $colorWhite1
+    font-size: 2.5rem
+    text-shadow: 0 4px $colorAlphaD
+
+    p
+      text-align: center
+      margin: 20px 0
+
+  button.continueButton
+    animation: continueButton 2s infinite linear
+
+section
+  padding-top: 5rem
+  padding-bottom: 5rem
+
+  .item
+    background: $colorWhite1
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.1)
+    @include displayFlex(center, center, column)
+
+  h2
+    grid-column: 1/4
+    font-size: 2rem
+    line-height: 5rem
+    color: $colorBlue3
+    width: 100%
+    display: block
+
+  article
+    line-height: 2.8rem
+    font-size: 1.4rem
+    background: $colorWhite2
+    padding: 1.5rem
+    box-shadow: 0px 2px 4px $colorAlphaD
+    border-radius: 20px
+
+section.about
+  @include displayGrid(3fr 1fr, initial)
+
+  &::before
+    content: ''
+    display: block
+    width: 100%
+    height: 20vh
+    position: absolute
+    left: 0
+    bottom: .5px
+    background: $colorBlue2
+    clip-path: polygon(0 0, 0% 100%, 50% 50%)
+
+section.work
+
+  article.content
+    @include displayGrid(repeat(2, 1fr), initial)
+    grid-gap: 20px
+
+    div.previews
+      img
+        display: none
+        &:first-child
+          &::before
+            content: ''
+            background: url('/./img/desktopmockup.svg') no-repeat
+            display: inline-block
+            height: 256px
+            width: 100%
+            position: absolute
+
+        &:nth-child(2)
+          &::before
+            content: ''
+            background: url('./img/smartphonemockup.svg') no-repeat
+            display: inline-block
+            height: 256px
+            width: 100%
+            position: absolute
+
+section.contact
+
+  article.content
+    @include displayGrid(repeat(2, 1fr), initial)
+    grid-gap: 20px
+
+    form.item
+      border-radius: 10px
