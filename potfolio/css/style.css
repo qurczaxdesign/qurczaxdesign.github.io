@@ -229,7 +229,7 @@ header.header {
   justify-content: space-evenly;
   flex-direction: column;
   height: 100vh;
-  background-color: #1854c2;
+  background-color: #525252;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 
@@ -307,7 +307,7 @@ section.about::before {
   position: absolute;
   left: 0;
   bottom: .5px;
-  background: #7197dd;
+  background: #909090;
   clip-path: polygon(0 0, 0% 100%, 50% 50%);
 }
 
